@@ -1,0 +1,196 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+{% url 'login' as login_url %}
+{% url 'membership' as membership_url %}
+
+
+  <!-- inner banner --> 
+  <div class="w3layouts-inner-banner">
+  <div class="container">
+    <div class="logo">
+      <h1><a class="cd-logo link link--takiri" href="{{ home_url }}">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+    </div>
+         <h1 class="cd-logo link link--takiri" style="font-size: 50px; margin-left: 200px; margin-top: 150px; color: white;">SEARCH RESULTS</h1>
+    <div class="clearfix"></div>
+    </div>
+  </div>
+  <!-- //inner banner --> 
+
+
+
+<!-- Search Results -->
+
+    <div class="container text-center mt-5"> 
+      <p style="font-size: 24px">{{ paginator_count }} Record(s) Found</p>
+    </div>
+
+{% if users %}
+    {% for user in users %}
+  <div class="container mt-5" style="border: 2px solid black;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+      {% if user != request.user and not user.is_superuser %}
+        <div class="row">
+            <div class="col-md-12 mb-5" style="border-bottom: 2px solid #CCC;padding-bottom: 20px;padding-top: 20px;">
+                <h1 class="head">{{ user.first_name }} {{ user.last_name }}
+                  <span style="font-size: 18px;">| ( {{ user.profile.profile_id }} )</span>
+                    {% if request.user.is_authenticated %}
+                      <button class="btn" style="float: right; background-color: red;"><a href="{% url 'user-detail' user.id %}" target="_blank" style="font-size: 20px;color: white;"><span class="proff"><i class="fa fa-eye"></i> View Profile</span></a></button>
+                  
+                    {% else %}
+                      <button class="btn" style="float: right; background-color: red;"><a href="{{ login_url }}" style="font-size: 20px;color: white;">View Profile</a></button>
+                    {% endif %}
+                </h1>
+            </div>
+
+            <div class="col-md-4">
+              <a href="{% url 'user-detail' user.id %}">
+                {% if user.photo %}
+                    <img src="{{user.photo.url}}" alt="..." style="width: 240px;height: 300px; margin-top:10px">
+                {% else %}
+                    {% if user.gender|lower == 'male' %}
+                        <img src="{% static 'images/profile-image-men.jpg' %}" alt="Default Male Icon" class="img-fluid" style="height: 300px;" />
+                    {% else %}
+                        <img src="{% static 'images/profile-image-girl.jpg' %}" alt="Default Male Icon" class="img-fluid" style="height: 300px;" />
+                    {% endif %}
+                {% endif %}                
+              </a>
+            </div>
+
+            <div class="col-md-8">
+                    <div class="bb">
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="res_dett">
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                  <p class="para">Age :</p> 
+                                                </div>
+                                                <div class="col-md-6">
+                                                  <p class="headd">{{ user.age }}</p> 
+                                                </div>
+                                            </div><br>
+
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <p class="para">Caste/Religion :</p> 
+                                              </div>
+                                              <div class="col-md-6">
+                                                <p class="headd">{{ user.caste }} {{ user.religion }}</p> 
+                                              </div>
+                                            </div><br>
+                                          
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <p class="para">Mother Tongue :</p> 
+                                              </div>
+                                              <div class="col-md-6">
+                                                <p class="headd">{{ user.motherTongue }} </p> 
+                                              </div>
+                                            </div><br>
+
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <p class="para">Education :</p> 
+                                              </div>
+                                              <div class="col-md-6">
+                                                <p class="headd">{{ user.education }}</p> 
+                                              </div>
+                                            </div><br>
+
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <p class="para">Occupation :</p> 
+                                              </div>
+                                              <div class="col-md-6">
+                                                <p class="headd">{{ user.education }}</p> 
+                                              </div>
+                                            </div><br>
+
+                                            <div class="row">
+                                              <div class="col-md-6">
+                                                <p class="para">Location :</p> 
+                                              </div>
+                                              <div class="col-md-6">
+                                                <p class="headd">{{ user.city }}  {{ user.state }} </p> 
+                                              </div>
+                                            </div><br>
+
+                                            <div class="row">
+                                              <div class="col-md-6 w3layouts_details">
+                                                <a href="{{ membership_url }}" target="_blank" style="border: 2px solid black;"> Send Interest</a>
+                                              </div>
+                                              <div class="col-md-6 w3layouts_details">
+                                                <a href="{{ membership_url }}" target="_blank" style="border: 2px solid black"> Send Message</a>  
+                                              </div>
+                                            </div>
+
+                  </div> 
+                </div>
+                          
+                          <div class="col-md-4">
+                              <div class="about_pro" style="border: 2px solid black;">
+                                  <p>{{ user.about_myself }}
+                                    <a href="{% url 'user-detail' user.id %}" style='color: #93021f' target='_blank' >View more
+                                    </a>                            
+                                  </p>
+                              </div>                        
+                          </div>
+
+              </div></div></div></div></div>                          
+
+      {%endif%}
+    {% endfor %}
+
+            <!-- Display pagination controls -->
+            <div class="container text-center">
+              <div class="pagination">
+                  <span class="step-links" style="font-size: 24px;">
+                      {% if users.has_previous %}
+                          <a href="?page=1">&laquo; First</a>
+                          <a href="?page={{ users.previous_page_number }}">previous</a>
+                      {% endif %}
+
+                      <span class="current">
+                          Page {{ users.number }} of {{ users.paginator.num_pages }}.
+                      </span>
+
+                      {% if users.has_next %}
+                          <a href="?page={{ users.next_page_number }}">Next</a>
+                          <a href="?page={{ users.paginator.num_pages }}">Last &raquo;</a>
+                      {% endif %}
+                  </span>
+              </div>
+            </div>
+
+
+    <!-- Get started -->
+    <div class="w3layous-story text-center">
+        <div class="container">
+            <h4>Your story is waiting to happen!  <a href="{{ register_url }}">Get started</a></h4>
+        </div>
+    </div>
+    <!-- //Get started -->
+
+
+
+  {% else %}
+  
+    <h1 class="mt-5 text-center mb-5">No profiles found.</h1> 
+
+
+    <!-- Get started -->
+    <div class="w3layous-story text-center">
+        <div class="container">
+            <h4>Your story is waiting to happen!  <a href="{{ register_url }}">Get started</a></h4>
+        </div>
+    </div>
+    <!-- //Get started -->
+
+  {% endif %}
+
+
+{% endblock %}

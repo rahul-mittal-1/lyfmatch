@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+
+
+{% block content %}
+
+
+  <style>
+
+
+   form{
+    width: 500px;
+    margin-left: 20px;
+    margin-top: 20px;
+   }
+
+  </style>
+
+  <!-- inner banner --> 
+  <div class="w3layouts-inner-banner">
+  <div class="container">
+    <div class="logo">
+      <h1><a class="cd-logo link link--takiri" href="{{ home_url }}">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+    </div>
+         <h1 class="cd-logo link link--takiri" style="font-size: 50px; margin-left: 270px; margin-top: 150px; color: white;">EDIT PROFILE</h1>
+    <div class="clearfix"></div>
+    </div>
+  </div>
+  <!-- //inner banner --> 
+
+
+   <div>
+
+    <form action="" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ update.as_p }}
+
+        <button type="submit">submit</button>
+    </form>
+
+   </div>
+
+
+{% endblock %}

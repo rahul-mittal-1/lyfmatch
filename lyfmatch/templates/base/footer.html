@@ -1,0 +1,74 @@
+{% load static %}
+
+
+
+{% url 'home' as home_url %}
+{% url 'login' as login_url %}
+{% url 'quicksearch' as quicksearch_url %}
+{% url 'register' as register_url %}
+{% url 'payment' as payment_url %}
+{% url 'membership' as membership_url %}
+{% url 'contact' as contact_url %}
+{% url 'about' as about_url %}
+{% url 'terms' as terms_url %}
+{% url 'privacy' as privacy_url %}
+
+
+<footer>
+	<div class="footer">
+		<div class="container">
+			<div class="footer-info w3-agileits-info">
+				<div class="col-md-4 address-left agileinfo">
+					<div class="footer-logo header-logo">
+						<h6>Get in Touch.</h6>
+					</div>
+					<ul>
+						<li><i class="fa fa-map-marker"></i> Second Floor, Chama Enclave Near Alwatiya Hospital, Maruti Estate Road, Agra - 282010</li>
+						<li><i class="fa fa-mobile"></i> 8006660781 </li>
+						<li><i class="fa fa-phone"></i> +91 8006660781 </li>
+						<li><i class="fa fa-envelope-o"></i> <a href="mailto:info.lyfmatch@gmail.com"> info.lyfmatch@gmail.com</a></li>
+					</ul>
+				</div>
+				<div class="col-md-8 address-right">
+					<div class="col-md-4 footer-grids">
+						<h3>Links</h3>
+						<ul>
+							<li><a href="{{ register_url }}">Registration</a></li>
+							<li><a href="{{ login_url }}">Login</a></li>  
+							<li><a href="{{ payment_url }}">Payment</a></li>
+							<li><a href="{{ privacy_url }}">Privacy</a></li>
+							<li><a href="{{ contact_url }}">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4 footer-grids">
+						<h3>Quick links</h3>
+						<ul>
+							<li><a href="{{ home_url }}">Home</a></li>
+							<li><a href="{{ quicksearch_url }}">Quick Search</a></li>
+							<li><a href="{{ membership_url }}">Membership</a></li>
+							<li><a href="{{ about_url }}">About Us</a></li>
+							<li><a href="{{ terms_url }}">Terms & conditon</a></li>
+						</ul> 
+					</div>
+					<div class="col-md-4 footer-grids">
+						<h3>Follow Us on</h3>
+						<section class="social">
+                        <ul>
+							<li><a class="icon fb" href="https://www.facebook.com/lyfmatch/"><i class="fa fa-facebook"></i></a></li>
+							<li><a class="icon gp" href="https://www.instagram.com/lyfmatch/"><i class="fa fa-instagram"></i></a></li>
+							<li><a class="icon tw" href="https://twitter.com/lyfmatch"><i class="fa fa-twitter"></i></a></li>
+						</ul>
+						</section>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>	
+	<div class="copy-right"> 
+		<div class="container">
+			<p>© 2024 Lyfmatch. All rights reserved | Design by <a href="https://ecommercesolutions.in"> Ecommerce Solutions</a></p>
+		</div>
+	</div> 
+</footer>

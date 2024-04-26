@@ -1,0 +1,164 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% url 'register' as register_url %}
+{% url 'quicksearch' as quicksearch_url %}
+
+
+<div class="w3layouts-banner" id="home" style="background: url('/static/images/couple5.jpg');background-size: cover;
+	min-height:720px;">
+	<div class="container">
+			<div class="logo">
+				<h1><a class="cd-logo link link--takiri" href="{{ home_url }}">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+			</div>
+		<div class="agileits-register mt-5">
+			<h3>Quick Search!</h3>
+			<form action="filterresult" method="get">
+					<div class="w3agile__text w3agile_banner_btom_login_left">
+						<h4>I'm looking for a</h4>
+							<select name="gender" id="gender" class="form-control">
+                                <option value="">Select</option>
+					            {% for g in gen %}
+					              <option value="{{ g }}">{{ g }}</option>
+					            {% endfor %}
+						    </select>
+					</div>
+					<div class="w3agile__text w3agile_banner_btom_login_left1">
+						<h4>Aged</h4>
+							<select name="age_min" class="frm-field required form-control">
+								{% for age in ages %}
+									<option value="{{age}}">{{age}}</option>
+								{% endfor %}
+							</select>
+						<span>To </span>
+						<select name="age_max" class="frm-field required form-control">
+							{% for age in ages %}
+								<option value="{{age}}">{{age}}</option>
+							{% endfor %}  		
+						</select>
+					</div>
+					<div class="w3agile__text w3agile_banner_btom_login_left2">
+						<h4>Religion</h4>
+						<select name="religion" id="religion" class="form-control">
+                            <option value="">Select</option>
+							{% for r in rel %}
+								<option value="{{ r }}">{{ r }}</option>
+		            		{% endfor %}
+						</select>
+					</div>
+					<div class="w3agile__text w3agile_banner_btom_login_left2">
+						<h4>Mother Tongue</h4>
+						<select name="community" id="community" class="form-control">
+                            <option value="">Select</option>
+				            {% for m in com %}
+								<option value="{{ m }}">{{ m }}</option>
+				            {% endfor %}
+						</select>
+						</select>
+					</div>
+						<div class="w3agile_banner_btom_login_left3">
+							<input type="submit" value="Search" />
+						</div>
+					<div class="clearfix"> </div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+<!-- Find your soulmate -->
+
+
+	<div class="w3l_find-soulmate text-center">
+		<h3>Find Your Soulmate</h3>
+			<div class="container">
+				<a class="scroll" href="{{ register_url }}">
+					<div class="col-md-3 w3_soulgrid">
+						<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						<h3>Sign Up</h3>
+						<p>Signup For Free And Update Your Profile</p>
+					</div>
+				</a>
+				<a class="scroll" href="{{ quicksearch_url }}">
+					<div class="col-md-3 w3_soulgrid">
+						<i class="fa fa-search" aria-hidden="true"></i>
+						<h3>Search</h3>
+						<p>Search For Your Right Partner</p>
+					</div>
+				</a>
+				<a class="scroll">
+					<div class="col-md-3 w3_soulgrid">
+						<i class="fa fa-users" aria-hidden="true"></i>
+						<h3>Connect</h3>
+						<p>Connect Your Perfect Match</p>
+					</div>
+				</a>
+				<a class="scroll">
+					<div class="col-md-3 w3_soulgrid">
+						<i class="fa fa-comments-o" aria-hidden="true"></i>
+						<h3>Interact</h3>
+						<p>Become A Member and Start Conversation</p>
+					</div>
+				</a>
+				<div class="clearfix"> </div>
+			</div>
+	</div>
+
+	<!-- //Find your soulmate -->
+
+					   
+	<!-- Bride & Groom -->
+
+		<div class="container-fuild">
+			<img src="{% static 'images/banner-home-2.jpg' %}" class="img-fluid"  style="padding-bottom: 50px;">
+		</div>
+
+	<!-- Bride & Groom  -->
+
+	
+	<!-- Get started -->
+	<div class="w3layous-story text-center">
+		<div class="container">
+			<h4>Your story is waiting to happen!  <a class="scroll" href="{{ register_url }}">Get started</a></h4>
+		</div>
+	</div>
+	<!-- //Get started -->
+	
+<
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+	  			containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+	 		};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+							
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!-- for smooth scrolling -->
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+	</script>
+	<!-- //for smooth scrolling -->
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "base/base.html" %}
+
+
+{% block content %}
+
+{% url 'home' as home_url %}
+{% url 'searchresult' as searchresult_url %}
+
+
+{% load static %}
+
+
+
+	<!-- inner banner -->	
+	<div class="w3layouts-inner-banner">
+		<div class="container">
+			<div class="logo">
+				<h1><a class="cd-logo link link--takiri" href="{{ home_url }}">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //inner banner -->	
+	
+
+	<!-- contact section -->
+<!-- 	<div class="w3ls_contact_section">
+		<div class="container">
+			<table>
+				<thead>Filter</thead>
+			</table>
+			<div class="w3_locations">
+			</div>
+		</div>
+	</div> -->
+	<!-- //contact section -->
+	
+	<!-- //for smooth scrolling -->
+
+
+
+
+	<div class="container" style="background: green;">
+		<div class="row">
+			<!-- <div class="col-3 pt-3" style="background: rgb(255,192,203);"> -->
+				<div class="col-md-3 w3ls-aside" style="background: rgb(255,182,203);">
+						<h3 class="text-center" style="font-size: 28px;">Filter Profile by:</h3><br><br>
+						<h3>Search by Profile / User ID:</h3>
+						<form action="#" method="get"> 
+							<input class="text" type="text" name="profile_id" placeholder="Enter Profile / User ID" required="">
+							<input type="submit" value="Search">
+							<div class="clearfix"></div>
+						</form>
+						<h4>Filter Profiles by</h4>
+						<div class="fltr-w3ls">
+							<h5>Name</h5>
+							<form action="#" method="get"> 
+								<input class="text" type="text" name="name" placeholder="Search by name" required="">
+								<input type="submit" value="Search">
+								<div class="clearfix"></div>
+							</form>					
+						</div>
+				</div>
+
+				<!-- <h4 class="text-center">Filter Profile By</h4>
+					<form action="searchresult/" method="">
+					{% csrf_token %}
+						<div class="w3agile__text w3agile_banner_btom_login_left">
+							<h4>I'm looking for a</h4>
+							<select id="country" onchange="change_country(this.value)" class="frm-field required">
+								<option value="null">Bride</option>
+								<option value="null">Groom</option>   
+							</select>
+						</div>
+						<div class="w3agile__text w3agile_banner_btom_login_left1">
+							<h4>Aged</h4>
+							<select id="country1" onchange="change_country(this.value)" class="frm-field required">
+								<option value="null">20</option>
+								<option value="null">21</option>   
+								<option value="null">22</option>   
+								<option value="null">23</option>   
+								<option value="null">24</option>   
+								<option value="null">25</option>  
+								<option value="null">- - -</option>   					
+							</select>
+							<span>To </span>
+							<select id="country2" onchange="change_country(this.value)" class="frm-field required">
+								<option value="null">30</option>
+								<option value="null">31</option>   
+								<option value="null">32</option>   
+								<option value="null">33</option>   
+								<option value="null">34</option>   
+								<option value="null">35</option>  
+								<option value="null">- - -</option>   					
+							</select>
+						</div>
+						<div class="w3agile__text w3agile_banner_btom_login_left2">
+							<h4>Religion</h4>
+							<select id="country3" onchange="change_country(this.value)" class="frm-field required">
+								<option value="null">Hindu</option>  
+								<option value="null">Muslim</option>   
+								<option value="null">Christian</option>   
+								<option value="null">Sikh</option>   
+								<option value="null">Jain</option>   
+								<option value="null">Buddhist</option>
+								<option value="null">No Religious Belief</option>   					
+							</select>
+						</div>
+						<div class="w3agile_banner_btom_login_left3">
+							<input type="submit" value="Search" />
+						</div>
+						<div class="clearfix"> </div>
+					</form><br> -->
+				
+			<!-- </div>	 -->
+			<div class="col-8 ml-5 pt-3" style="background: rgb(245, 245, 220);">
+				<h4>Pagination</h4><br>
+				<h4>10715 Record(s) Found</h4>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+
+

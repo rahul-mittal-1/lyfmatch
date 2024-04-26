@@ -1,0 +1,278 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'register' as register_url %}
+
+
+
+
+    <!-- inner banner -->   
+    <div class="w3layouts-inner-banner">
+    <div class="container">
+        <div class="logo">
+            <h1><a class="cd-logo link link--takiri" href="{{ home_url }}">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+        </div>
+            <h1 class="cd-logo link link--takiri" style="font-size: 50px; margin-left: 200px; margin-top: 150px; color: white;">ADVANCE SEARCH</h1>
+        <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //inner banner --> 
+    
+<!-- breadcrumbs -->
+    <div class="w3layouts-breadcrumbs text-center">
+        <div class="container">
+            <span class="agile-breadcrumbs"><a href="{{ home_url }}">Home</a> > <span>Search</span></span>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
+
+
+    <!-- Search form -->
+    <div class="w3ls-list">
+        <div class="container">
+        <h2>Search your Match</h2>
+        <div class="col-12 profiles-list-agileits">
+        <!--Horizontal Tab-->
+            <div id="parentHorizontalTab">
+                <ul class="resp-tabs-list hor_1">
+                    <li style="background-color: #CCC;">Advanced Search</li>
+                    <!-- <li><a href="advance/">Advanced Search</a></li> -->
+                </ul>
+                <div class="resp-tabs-container hor_1">
+                    <div>
+                        <div class="w3_regular_search">
+                            <form action="advancedfres" method="get"> 
+                               <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Gender : </label>
+                                    <div class="col-sm-7 form_radios">
+                                        <div class="select-block1">
+                                          <select name="gender" id="gender" class="">
+                                            <option value="">Select</option>
+                                                {% for g in gen %}
+                                                  <option value="{{ g }}">{{ g }}</option>
+                                                {% endfor %}
+                                          </select>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </div><br><br>     
+                                <!-- <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Marital Status : </label>
+                                <div class="col-sm-7 form_radios">
+                                    <div class="select-block1">
+                                      <select name="gender" id="gender" class="">
+                                        <option value="">Select</option>
+                                            {% for m in marital_statuses %}
+                                                <option value="{{ m }}">{{ m }}</option>
+                                            {% endfor %}
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div> -->
+                            <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Age in years : </label>
+                                <div class="w3agile__text col-sm-7 w3agile_banner_btom_login_left1">
+                                    <select name="age_min">
+                                        {% for age in ages %}
+                                          <option value="{{age}}">{{age}}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <span>To </span>
+                                    <select name="age_max">
+                                        {% for age in ages %}
+                                          <option value="{{age}}">{{age}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                                <div class="form_but1">
+                                    <label class="col-sm-5 control-label1" for="sex">Complexion : </label>
+                                    <div class="col-sm-7 form_radios">
+                                      <div class="select-block1">
+                                        <select name="complexion" id="complexion">
+                                            <option value="">All</option>
+                                            {% for c in complexions %}
+                                                <option value="{{ c }}">{{ c }}</option>
+                                            {% endfor %}
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="clearfix"> </div>
+                                  </div>
+                        <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Religion : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="religion" id="religion">
+                                        <option value="">Any</option>
+                                        {% for r in rel %}
+                                            <option value="{{ r }}">{{ r }}</option>
+                                        {% endfor %}
+                                    </select><br>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>
+                              <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Mother Tongue : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="mother_tongue" id="mother_tongue">
+                                        <option value="">Any</option>
+                                        {% for c in com %}
+                                            <option value="{{ c }}">{{ c }}</option>
+                                        {% endfor %}
+                                    </select><br>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>
+                            <div class="agileits_advanced_Search">
+                              <h5>Education and Career</h5>
+                              <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Highest Education : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="education" id="education">
+                                        <option value="">Any</option>
+                                        {% for e in educations %}
+                                            <option value="{{ e }}">{{ e }}</option>
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                                </div>
+                                <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Occupation : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                     <select name="occupation" id="occupation">
+                                        <option value="">Any</option>
+                                        {% for o in occupations %}
+                                            <option value="{{ o }}">{{ o }}</option>
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>
+                                <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Annual income : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="occupation" id="occupation">
+                                        <option value="">Select</option>
+                                        {% for s in salaries %}
+                                            <option value="{{ s }}">{{ s }}</option>
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>
+                              </div>
+                              <div class="agileits_advanced_Search">
+                              <h5>Location details</h5>
+                              <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">Country : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="country" id="country">
+                                        <option value="">Any</option>
+                                        {% for c in countries %}
+                                            <option value="{{ c }}">{{ c }}</option>
+                                        {% endfor %}
+                                    </select><br>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>
+                              <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">State : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="state" id="state">
+                                        <option value="">Any</option>
+                                        {% for s in states %}
+                                            <option value="{{ s }}">{{ s }}</option>
+                                        {% endfor %}
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>
+                              <div class="form_but1">
+                                <label class="col-sm-5 control-label1" for="sex">City : </label>
+                                <div class="col-sm-7 form_radios">
+                                  <div class="select-block1">
+                                    <select name="city" id="city">
+                                        <option value="">Any</option>
+                                        {% for c in cities %}
+                                            <option value="{{ c }}">{{ c }}</option>
+                                        {% endfor %}
+                                    </select><br>
+                                  </div>
+                                </div>
+                                <div class="clearfix"> </div>
+                              </div>                                
+                              </div>
+
+                              
+                              <input type="submit" class="mt-5 mb-5" value="Search" />
+                            </form>
+                        </div>
+</div></div></div></div></div></div>
+    <!-- //Search form -->
+    
+
+
+
+
+
+  <div class="container">
+    {% if profiles %}
+    {% for user in profiles %}  
+      {% if user != request.user and not user.is_superuser %}
+        <div class="card">
+          <img src="{{ user.photo }}" alt="Profile Picture" style="width:100%">
+          <h3>{{ user.username }}</h3>
+          <p>Age: {{ user.age }}</p>
+          <p>Gender: {{ user.gender }}</p>
+          <p>Religion: {{ user.religion }}</p>
+          <p>Mother Tongue: {{ user.motherTongue }}</p>
+          <p>Firstname: {{ user.first_name }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <p style="color: white;">No profiles found.</p> 
+  {% endif %}
+
+  
+
+ </div></div>
+ 
+
+
+    <!-- Get started -->
+    <div class="w3layous-story text-center">
+        <div class="container">
+            <h4>Your story is waiting to happen!  <a href="{{ register_url }}">Get started</a></h4>
+        </div>
+    </div>
+    <!-- //Get started -->
+    
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,122 @@
+{% load static %}
+
+
+{% url 'home' as home_url %}
+{% url 'login' as login_url %}
+{% url 'logout' as logout_url %}
+{% url 'myprofile' as myprofile_url %}
+
+
+{% url 'quicksearch' as quicksearch_url %}
+{% url 'advancesearch' as advancesearch_url %}
+{% url 'idsearch' as idsearch_url %}
+
+{% url 'register' as register_url %}
+{% url 'payment' as payment_url %}
+{% url 'membership' as membership_url %}
+{% url 'contact' as contact_url %}
+
+
+
+  <style>
+    /* Style for header */
+    header {
+      background-color: rgb(255, 0, 0);
+      /*background-color: #000;*/
+      color: #fff;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    
+    /* Style for logo */
+    .logo {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    /* Style for tabs */
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      padding-top: 20px;
+      display: inline-block;
+      float: right;
+      margin-right: 20px;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+     img {
+      height: 70px;
+      float: left;
+    }
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #CCC3;
+  width: 200px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 10px;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>
+
+
+
+<header>
+        <nav>
+          <div class="container">
+              <a href="{{ home_url }}"><img src="{% static 'images/dating-logo1.png' %}" alt="Logo"></a>
+            <ul>
+              {% if request.user.is_authenticated %}
+                <li><a href="{{ myprofile_url }}">My Home</a></li>
+              {% else %}
+                <li><a href="{{ home_url }}">Home</a></li>
+              {% endif %}  
+
+              
+              <li class="dropdown">
+                <a href="">Search  ▼</a>
+                <div class="dropdown-content">
+                  <a href="{{ quicksearch_url }}" class="mt-4">Quick Serach</a>
+                  <a href="{{ advancesearch_url }}">Advanced Serach</a>
+                  <a href="{{ idsearch_url }}">Search by id</a>
+                </div>
+              </li>
+              <li><a href="{{ membership_url }}">Membership</a></li>
+              <li><a href="{{ payment_url }}">Payment</a></li>
+              <li><a href="{{ register_url }}">Registration</a></li>
+              {% if request.user.is_authenticated %}
+                <li><a href="{{ logout_url }}">Logout</a></li>
+              {% else %}
+                <li><a href="{{ login_url }}">Login</a></li>
+              {% endif %}  
+            </ul>
+          </div> 
+      </nav>
+</header>
+
+
+

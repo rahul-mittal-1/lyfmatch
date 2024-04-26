@@ -1,0 +1,139 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+{% url 'home' as home_url %}
+{% url 'register' as register_url %}
+
+
+
+	<!-- inner banner -->	
+	<div class="w3layouts-inner-banner">
+		<div class="container">
+			<div class="logo">
+				<h1><a class="cd-logo link link--takiri" href="{{ home_url }}">Match <span><i class="fa fa-heart" aria-hidden="true"></i>Made in heaven.</span></a></h1>
+			</div>
+         		<h1 class="cd-logo link link--takiri" style="font-size: 50px; margin-left: 250px; margin-top: 150px; color: white;">PRIVACY POLICY</h1>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //inner banner -->	
+	
+	<!-- breadcrumbs -->
+	<div class="w3layouts-breadcrumbs text-center">
+		<div class="container">
+			<span class="agile-breadcrumbs"><a href="{{ home_url }}">Home</a> > <span>PRIVACY</span></span>
+		</div>
+	</div>
+	<!-- //breadcrumbs -->
+
+	
+	<!-- Privacy-policy-section -->
+		<section class="privacy_policy_section">
+			<div class="privacy_policy">
+				<div class="container">
+					<h2 class="last-updated">Last updated on : 30-04-2024</h2>
+					<div class="panel-group" id="accordion">
+						<!-- First Panel -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseOne">
+									 <span>&#8594;</span> What information do we collect?
+								 </h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>Being a matrimonial site we have to gather certain information from our members, which is essential, to enable us to provide you with profiles that match your requirements. The information collected on Lyfmatch.com cannot be used by anyone to ascertain the identity of a particular individual. Lyfmatch.com collects information like name, mailing address, contact numbers, email address, current location, status in country of residence, age, gender, religion, caste, sub caste, gotra, time of birth & city, personal information such as height, color complexion and preferences you seek in your life partner. Providing this information enables other members and visitors to search your profile and help them to know about you prior to contacting.</p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Second Panel -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								 <h4 class="panel-title" data-toggle="collapse"  data-target="#collapseTwo">
+									<span>&#8594;</span> Description of service and content policy
+								 </h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">								
+									<p>All communication sent from Lyfmatch.com will be sent to the email address or phone that you provided at the time of registration. Your email address or phone will not be revealed to anyone. All communication from members will be sent to your Lyfmatch.com mail box or phone. Lyfmatch.com  will not sell or share your email id without your consent. The private information can be changed or discarded by the members at any point of time. </p>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Third Panel -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThree">
+									<span>&#8594;</span> Links with other Web sites
+								 </h4>
+							</div>
+							<div id="collapseThree" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>Through our affiliate program we are connected with other web sites as well. Hence you might find links on our site to those affiliate web sites. Once clicked on this link you are directed to that particular web site and no longer are on Lyfmatch.com, therefore the terms and conditions and privacy policy of Lyfmatch.com do not apply.</p>
+								</div>
+							</div>
+						</div>
+						<!-- Fourth Panel -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseFour">
+									<span>&#8594;</span> Disclaimer
+								 </h4>
+							</div>
+							<div id="collapseFour" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>Lyfmatch.com only puts in the effort to extract accurate information from its members but in no way guarantees the authenticity of the same. Any members data found on this web site is in no way the expressed opinion or views of Lyfmatch.com. Any profile put on this web site should not be mistaken as a recommendation made by Lyfmatch.com.</p>
+								</div>
+							</div>
+						</div>
+
+
+						<!-- Fourteen Panel -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseFourteen">
+									<span>&#8594;</span> Contact Us
+								 </h4>
+							</div>
+							<div id="collapseFourteen" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>Second Floor, Chama Enclave Near Alwatiya Hospital, Maruti Estate Road, Agra - 282010</p>
+									<div class="more-address"> 
+										<div class="address-more">
+											<p>WLB Consultancty Pvt. Ltd.</p>
+											<p>Maruti Estate Road, Agra - 282010</p>
+										</div>
+										<div class="address-right">
+											<p>Tel: +91 8006660781</p>
+											<p>E-Mail: <a href="mailto:info.lyfmatch@gmail.com">info.lyfmatch@gmail.com</a></p>
+										</div>
+										<div class="clearfix"> </div>
+									  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- //Privacy-policy-section -->
+	
+
+
+	<!-- Get started -->
+	<div class="w3layous-story text-center">
+		<div class="container">
+			<h4>Your story is waiting to happen!  <a href="{{ register_url }}">Get started</a></h4>
+		</div>
+	</div>
+	<!-- //Get started -->
+	
+
+
+
+
+{% endblock %}

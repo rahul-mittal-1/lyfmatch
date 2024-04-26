@@ -1,0 +1,92 @@
+<!-- advanced_search.html -->
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+{% url 'home' as home_url %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Search</title>
+</head>
+<body>
+
+    <h1>Advanced Search</h1>
+
+    <form method="get" action="{% url 'advanced' %}">
+        <!-- Input fields for search criteria -->
+        <label for="gender">Gender:</label>
+        <input type="text" name="gender">
+
+        <label for="marital_status">Marital Status:</label>
+        <input type="text" name="marital_status">
+
+        <label for="age_min">Minimum Age:</label>
+        <input type="number" name="age_min">
+
+        <label for="age_max">Maximum Age:</label>
+        <input type="number" name="age_max">
+
+        <label for="height_min">Minimum Height:</label>
+        <input type="text" name="height_min">
+
+        <label for="height_max">Maximum Height:</label>
+        <input type="text" name="height_max">
+
+        <label for="complexion">Complexion:</label>
+        <input type="text" name="complexion">
+
+        <label for="physical_status">Physical Status:</label>
+        <input type="text" name="physical_status">
+
+        <label for="eating_habits">Eating Habits:</label>
+        <input type="text" name="eating_habits">
+
+        <label for="religion">Religion:</label>
+        <input type="text" name="religion">
+
+        <label for="mother_tongue">Mother Tongue:</label>
+        <input type="text" name="mother_tongue">
+
+        <label for="education">Education:</label>
+        <input type="text" name="education">
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" name="occupation">
+
+        <label for="income_min">Minimum Income:</label>
+        <input type="text" name="income_min">
+
+        <label for="income_max">Maximum Income:</label>
+        <input type="text" name="income_max">
+
+        <label for="country">Country:</label>
+        <input type="text" name="country">
+
+        <label for="state">State:</label>
+        <input type="text" name="state">
+
+        <label for="city">City:</label>
+        <input type="text" name="city">
+        
+        <button type="submit">Search</button>
+    </form>
+
+    {% if users %}
+    <h2>Search Results</h2>
+    <ul>
+        {% for user in users %}
+        <li>{{ user }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+
+
+{% block content %}
+
+
+  <style>
+
+   form{
+    width: 500px;
+    margin-left: 20px;
+    margin-top: 20px;
+   }
+
+  </style>
+
+
+
+    <h2 style="text-align: center;background-color:white;margin-top:20px"><b>ADD preference</b></h2>
+   <div>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">add prefernce</button>
+    </form>
+
+   </div>
+
+
+
+{% endblock %}

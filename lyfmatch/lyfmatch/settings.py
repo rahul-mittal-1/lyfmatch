@@ -33,7 +33,7 @@ CSRF_TRUSTED_ORIGINS = ["https://lyfmatch.com", "https://www.lyfmatch.com"]
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
-PASSWORD = 'WLBPRIVATELIMITED'
+# PASSWORD = 'WLBPRIVATELIMITED'
 
 
 # Application definition
@@ -99,9 +99,9 @@ DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': 'lyfmatch',
-#         'HOST': 'database.czgssme08hi3.ap-south-1.rds.amazonaws.com',
 #         'USER': 'admin',
-#         'PASSWORD': PASSWORD,
+#         'PASSWORD': 'WLBPRIVATELIMITED',
+#         'HOST': 'database.czgssme08hi3.ap-south-1.rds.amazonaws.com',
 #         'PORT': '3306',
 #     }
 # }

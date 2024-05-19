@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-34br8!5d*^6!5d80x94k_pzvlhd7n777qxz1a&1y!#qhlq=riy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://lyfmatch.com", "www.lyfmatch.com", "lyfmatch.com", "15.206.92.26"]
+ALLOWED_HOSTS = ["https://lyfmatch.com", "https://www.lyfmatch.com", "www.lyfmatch.com", "lyfmatch.com", "52.66.240.133"]
 
 AUTH_USER_MODEL = 'user.CustomUser'
 

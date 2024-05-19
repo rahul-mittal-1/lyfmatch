@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["https://lyfmatch.com", "https://www.lyfmatch.com", "www.lyfmatch.com", "lyfmatch.com", "52.66.240.133"]
 
+CSRF_TRUSTED_ORIGINS = ["https://lyfmatch.com", "https://www.lyfmatch.com"]
+
+
 AUTH_USER_MODEL = 'user.CustomUser'
 
 PASSWORD = 'WLBPRIVATELIMITED'

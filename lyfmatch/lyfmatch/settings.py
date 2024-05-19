@@ -33,7 +33,7 @@ CSRF_TRUSTED_ORIGINS = ["https://lyfmatch.com", "https://www.lyfmatch.com"]
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
-# PASSWORD = 'MYWLBPVTLTD'
+PASSWORD = 'WLBPRIVATELIMITED'
 
 
 # Application definition
@@ -86,25 +86,25 @@ WSGI_APPLICATION = 'lyfmatch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'lyfmatch',
+#         'HOST': 'database.czgssme08hi3.ap-south-1.rds.amazonaws.com',
+#         'USER': 'admin',
+#         'PASSWORD': PASSWORD,
+#         'PORT': '3306',
 #     }
 # }
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lyfmatch',
-        'USER': 'postgres',
-        'PASSWORD': 'MYWLBPVTLTD',
-        'HOST': 'mydatabase.czgssme08hi3.ap-south-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
 
 
 

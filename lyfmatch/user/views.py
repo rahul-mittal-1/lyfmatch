@@ -9,8 +9,6 @@ from .models import CustomUser, Preference, Profile, MaritalStatus
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
 from datetime import datetime,timedelta
-from .utils import generate_profile_id  # Import the function
-
 
 
 
@@ -47,6 +45,20 @@ class signupview(CreateView):
       login(self.request, user)
 
       return response
+
+
+
+  def generate_profile_id(user):
+      # Implement your profile ID generation logic here
+      # You can use UUID, random strings, or any other method to generate a unique profile ID
+      # For example:
+      import uuid
+      return str(uuid.uuid4())[:10]
+  
+     
+
+
+
 
 
 
